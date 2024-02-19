@@ -19,7 +19,7 @@ class Kustos():
     
     def pridej_kartu(self, id_karty: str, jmeno: str, prijmeni: str) -> Optional[Karta]:
         """Přidává kartu do evidence Pokud přidání proběhne úspěšně, vrací objekt karty, jinak vrací None."""
-        if id_karty in self.opravnene_karty:
+        if id_karty not in self.opravnene_karty:
             return None
         # else:
         karta: Karta = Karta(id_karty, jmeno, prijmeni)
